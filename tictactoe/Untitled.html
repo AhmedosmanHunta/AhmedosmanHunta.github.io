@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tic Tac Toe</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Audiowide');
+      /*@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');*/
+    </style>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+
+    <h1>X VS O</h1>
+
+    <div id="board">
+      <div class='box'></div>
+      <div class='box'></div>
+      <div class='box'></div>
+      <div class='box'></div>
+      <div class='box'></div>
+      <div class='box'></div>
+      <div class='box'></div>
+      <div class='box'></div>
+      <div class='box'></div>
+    </div>
+   
+    <div id="clear">
+      <h2 id="youhavewon"> </h2>
+  
+      <!--<button id="restart" >Start over</button>-->
+    </div>
+
+    <div class="wrapper">
+    <button id="restart" >Start over</button>
+             </div>
+
+    <script>
+
+      let winner = false;
+      let tie = 9;
+      
+
+    const board = document.getElementById('board')
+
+    let winCombos = [
+      [0,1,2],
+      [3,4,5],
+      [6,7,8],
+      [0,3,6],
+      [1,4,7],
+      [2,5,8],
+      [0,4,8],
+      [2,4,6],
+    ]
+
+    function checkWin(){
+      winCombos.forEach (function(number) {
+        let boardState = number
+          .map(function(position){
+            return board.children[position].innerHTML;
+          })
+          .join("");
+        
+        console.log(boardState)
+        if (boardState === "XXX" || boardState === "OOO"){
+          winner = true;
+          document.getElementById('youhavewon').innerHTML = "YOU WON!"
+        }
+      });
+    }
+
+    let turn = 0;
+
+    const restartBttn = document.getElementById('restart')
+
+    board.addEventListener('click', function(event){
+      if (event.target.innerHTML == '' & winner == false ){
+        if (turn % 2 == 0){
+            event.target.innerHTML = 'X'
+            turn++
+        } else {
+            event.target.innerHTML = 'O'
+            turn++
+        }
+        checkWin()
+        tie--
+        
+        if (tie == 0 && !winner) {
+          document.getElementById('youhavewon').innerHTML = "It's a TIE!"
+        } 
+      
+      }
+    })
+
+
+        restartBttn.addEventListener('click', function() {
+            alert('restarting the game')
+            window.location.reload()
+        })
+
+        
+
+    </script> 
+
+  </body>
+</html>
