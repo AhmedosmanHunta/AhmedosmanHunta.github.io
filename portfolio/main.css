@@ -1,0 +1,74 @@
+body{
+    background: lightgray;
+}
+
+#br-img{
+    background: url('../portfolio/images/tool.jpg');
+    background-size: 1500px;
+    background-repeat: no-repeat;
+    min-height: 500px;
+}
+
+#About{
+margin-top: -200px;
+}
+
+#About span{
+padding: 10px 20px 10px 20px
+}
+
+#About hr{
+    border-width: 2px;
+    margin-top: 6px;
+}
+
+i.fas,
+i.fab { 
+  color: beige;
+  font-size: 2em;
+}
+
+#CP span{
+    padding: 10px 20px 10px 20px
+}
+
+#CP hr{
+    border-width: 2px;
+    margin-top: 6px;
+}
+
+#hobbies span{
+    padding: 10px 20px 10px 20px
+}
+
+#hobbies hr{
+    border-width: 2px;
+    margin-top: 6px;
+}
+
+#hobbies .card{
+    border-top: 3px solid lightslategray;
+}
+
+#contact span{
+    padding: 10px 20px 10px 20px
+}
+
+#contact hr{
+    border-width: 2px;
+    margin-top: 6px;
+}
+
+.iframe-container{
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; 
+    height: 0;
+  }
+  .iframe-container iframe{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
