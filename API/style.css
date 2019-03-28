@@ -1,0 +1,23 @@
+
+.container{
+    width: 400px;
+    margin: 0 auto;
+    background-color: lightgrey;
+    margin-bottom: 3%;
+}
+
+div.container #image-container{
+    align-items: center;
+        justify-content: center;
+        flex-direction: row;
+}
+
+div.container #button-container{
+    margin-top: 2%;
+    display: flex; justify-content: center;
+}
+
+
+
+
+
